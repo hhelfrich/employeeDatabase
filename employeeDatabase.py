@@ -7,8 +7,18 @@ while (running):
     if (input() == "Exit"):
         running = False
     if (input() == "AddNewEmployee"):
-        getPerson(self)
+        you.personEmploy.Person()
+        you.getPerson()
+        employees.append(you)
     if (input() == "DeleteEmployee"):
 
     if (input() == "SeeList"):
-        Print()
+        Print(*employees, sep = "\n")
+    if (input() == "UploadList"):
+        with open("employeeDatabase") as file
+            employees = file.readlines()
+
+f = open("employeeDatabase", "w")
+f.write(employees)
+f.close()
+
