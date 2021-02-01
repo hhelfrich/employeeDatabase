@@ -4,7 +4,7 @@ class Person:
         self.lastname = lastname
         self.number = number
         self.email = email
-        self.dateemployed = deteemployed
+        self.dateemployed = dateemployed
         self.department = department
         self.jobtitle = jobtitle
 
