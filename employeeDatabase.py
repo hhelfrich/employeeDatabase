@@ -2,7 +2,7 @@ import personEmploy
 you = personEmploy.Person()
 
 running = True
-employees = []
+employees = [] * 2
 while (running):
     do = input("Options: \n AddNewEmployee \n DeleteEmployee \n SeeList \n UploadList \n Exit")
     if (do == "Exit"):
@@ -14,12 +14,16 @@ while (running):
         index = input("Type the index of the employee you wish to delete: ")
         array.pop(index)
     if (do == "SeeList"):
-        print(*employees, sep = "\n")
+        print(*employees, sep = "\n") 
     if (do == "UploadList"):
-        with open("employeeDatabase.txt.rtf") as file:
-            employees = file.readlines()
-
-f = open("employeeDatabase.txt.rtf", "w")
-f.write(employees)
+        inFile = open("employeeDatabase.rtf", "r")
+        for line in inFile:
+            print(line)
+            firstname, lastname, number, email, dateemployed, department, jobtitle = line.split(" ")
+            emp = Person(self, firstname, lastname, number, email, dateemployed, department, jobtitle)
+            employees.append(emp)
+f = open("employeeDatabase.rtf", "w")
+f.write(str(employees.firstname) + " " + str(employees.lastname) + " " + str(employees.number) + " " + str(employees.email) + " " + str(employees.dateemployed) + " " + str(employees.department) + " " + str(employees.jobtitle) + "\n")
 f.close()
 
+ 
