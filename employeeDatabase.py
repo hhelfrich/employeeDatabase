@@ -14,7 +14,8 @@ while (running):
         index = input("Type the index of the employee you wish to delete: ")
         array.pop(index)
     if (do == "SeeList"):
-        print(*employees, sep = "\n") 
+        for employee in employees:
+            print(employee.firstname, " ", employee.lastname, " ", employee.number, " ", employee.email, " ", employee.dateemployed, " ", employee.department, " ", employee.jobtitle,  sep = "\n") 
     if (do == "UploadList"):
         inFile = open("employeeDatabase.txt", "r")
         for line in inFile:
