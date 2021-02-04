@@ -16,14 +16,15 @@ while (running):
     if (do == "SeeList"):
         print(*employees, sep = "\n") 
     if (do == "UploadList"):
-        inFile = open("employeeDatabase.rtf", "r")
+        inFile = open("employeeDatabase.txt", "r")
         for line in inFile:
             print(line)
             firstname, lastname, number, email, dateemployed, department, jobtitle = line.split(" ")
-            emp = Person(self, firstname, lastname, number, email, dateemployed, department, jobtitle)
+            emp = personEmploy.Person(firstname, lastname, number, email, dateemployed, department, jobtitle)
             employees.append(emp)
-f = open("employeeDatabase.rtf", "w")
-f.write(str(employees.firstname) + " " + str(employees.lastname) + " " + str(employees.number) + " " + str(employees.email) + " " + str(employees.dateemployed) + " " + str(employees.department) + " " + str(employees.jobtitle) + "\n")
+f = open("employeeDatabase.txt", "w")
+for employee in employees:
+    f.write(str(employee.firstname) + " " + str(employee.lastname) + " " + str(employee.number) + " " + str(employee.email) + " " + str(employee.dateemployed) + " " + str(employee.department) + " " + str(employee.jobtitle) + "\n")
 f.close()
 
  
