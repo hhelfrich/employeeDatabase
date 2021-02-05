@@ -20,9 +20,11 @@ while (running):
         inFile = open("employeeDatabase.txt", "r")
         for line in inFile:
             print(line)
-            firstname, lastname, number, email, dateemployed, department, jobtitle = line.split(" ")
-            emp = personEmploy.Person(firstname, lastname, number, email, dateemployed, department, jobtitle)
-            employees.append(emp)
+            array = line.split(" ")
+            if len(array) == 7:
+                firstname, lastname, number, email, dateemployed, department, jobtitle = line.split(" ")
+                emp = personEmploy.Person(firstname, lastname, number, email, dateemployed, department, jobtitle)
+                employees.append(emp)
 f = open("employeeDatabase.txt", "w")
 for employee in employees:
     f.write(str(employee.firstname) + " " + str(employee.lastname) + " " + str(employee.number) + " " + str(employee.email) + " " + str(employee.dateemployed) + " " + str(employee.department) + " " + str(employee.jobtitle) + "\n")
